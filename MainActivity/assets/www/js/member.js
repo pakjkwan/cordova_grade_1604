@@ -60,8 +60,8 @@ var member = {
 			});
 			$('#cancelBtn').click(function(e) {
 				e.preventDefault();
-				alert('취소버튼 클릭');
-				$('#content').html(member.loginForm);
+
+
 			});
 		});
 	},
