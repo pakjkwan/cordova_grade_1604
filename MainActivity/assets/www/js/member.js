@@ -1,5 +1,5 @@
 var member = {
-	
+	context : 'http://52.10.25.191',
 	join : 	function(context) {
 		
 		$('#content').html(this.joinForm);
@@ -14,7 +14,7 @@ var member = {
 				cate : $('#cate').val()	
 			};
 			$.ajax({
-				url : context+'/member/join',
+				url : member.context+'/member/join',
 				data : JSON.stringify(member),
 				dataType : 'json',
 				type : 'POST',
@@ -57,11 +57,11 @@ var member = {
 			$('#joinBtn').click(function(e) {
 				e.preventDefault();
 				alert('조인버튼 클릭');
+				member.join();
 			});
 			$('#cancelBtn').click(function(e) {
 				e.preventDefault();
-
-
+				member.login();
 			});
 		});
 	},
@@ -74,7 +74,7 @@ joinForm : 	'<div id="join">\
 		<h2 class="text-center">회원가입</h2>\
 	</div>\
 	<div class="joinCenter row">\
-		<form class="form-horizontal">\
+		<form class="form-vertical">\
 			<fieldset class="joinField">\
 				<div class="form-group">\
 					<label for="input_cate" class="col-sm-4 control-label">회원등급</label>\
@@ -138,7 +138,7 @@ loginForm : '<div id="loginForm">\
 	<div class="loginTop text-center" >\
 	<img src="img/paper_plane.png" id="paper_plane" style="width:160px;height:160px"  />\
 </div>\
-<form class="form-horizontal">\
+<form class="form-vertical">\
 <div class="loginCenter row" style="margin-left: 43.5%;">\
 		<fieldset class="loginField">\
 			<div class="form-group">\
